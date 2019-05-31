@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <title>WATANABE_CHECKER</title>
+</head>
+<body>
+  <div id="main">
+    <h2>WATANABE CHECKER ~Ver 1.0~</h2>
+      <div id="quiz">
+        <p id="start"><span>Start</span></p>
+        <p id="target"></p>
+      </div>
+      <p id="timer_label">0.00</p>
+  </div>
+  <div id="answer">
+    <span id="answer1" class="answer_btn">渡邉</span>
+    <span id="answer2" class="answer_btn">渡邊</span>
+    <span id="answer3" class="answer_btn">濱邊</span>
+    <span id="answer4" class="answer_btn">渡辺</span>
+  </div>
+  <p>正解数: <span id="correctCounter">0</span></p>
+  <p>不正解数: <span id="incorrectCounter">0</span></p>
+  <audio id="soundA" preload="auto">
+    <source src="./audio/decision26.mp3" type="audio/mp3">
+  </audio>    
+  <audio id="soundB" preload="auto">
+    <source src="./audio/incorrect2.mp3" type="audio/mp3">
+  </audio>    
+  <script src="app.js"></script>
+</body>
+</html>
