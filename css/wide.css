@@ -1,0 +1,135 @@
+body{
+  font-family: 'Courier New', monospace;
+}
+
+#main{
+  background: #aaa;
+  text-align: center;
+  
+}
+/* #start{
+  display: inline-block;
+  text-align: center;
+  font-size: 48px;
+  letter-spacing: 3px;
+} */
+
+#start {
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  background-color: #9ec34b;
+  border: 2px solid #9ec34b;
+  font-size: 16px;
+  color: #9ec34b;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 24px;
+  border-radius: 4px;
+  position: relative;
+}
+
+#start span {
+  position: relative;
+  z-index: 1;
+}
+
+#start::before,
+#start::after {
+  content: "";
+  display: block;
+  background-color: #FFF;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: .2s;
+}
+#start::before {
+  left: 0;
+}
+#start::after {
+  right: 0;
+}
+
+#start:hover:before,
+#start:hover:after {
+  width: 0;
+  background-color: #FFF;
+}
+
+#start:hover {
+  color: #FFF;
+  cursor:pointer;
+}
+
+#quiz{
+  text-align: center;
+  height:200px;
+}
+
+#target{
+  display: inline-block;
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 3px;
+  }
+
+
+#answer{
+  background:#9ab;
+  white-space: nowrap;
+  text-align: center;
+  
+}
+
+
+.answer_btn {
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #111;
+  background: #fd9535;/*背景色*/
+  border-bottom: solid 2px #d27d00;/*少し濃い目の色に*/
+  border-radius: 4px;/*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  font-weight: bold;
+}
+
+.answer_btn:hover{
+  cursor: pointer;
+}
+
+.answer_btn:active {
+  border-bottom: solid 2px #fd9535;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+
+#desc{
+  display: none;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: auto;
+  font-size: 13pt;
+  line-height: 200%;
+  width: 50vw;
+  height: 70vh;
+  z-index: 2;
+  padding: 30px;
+  background: #e2ceeb;
+  border-radius: 3px;
+  box-shadow:2px 2px  rgba(255,255,255,0.3);
+  word-wrap: break-word;
+}
+.cancel{
+  display: inline-block;
+  font-size: 2em;
+  float: right;
+}
+.cancel:hover{
+  opacity: 0.3;
+}
