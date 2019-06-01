@@ -9,9 +9,17 @@ let gameSet;
 let wordDirect = [biggerWord,spinnerWord,moveWord];
 let fontSize=0;
 let angle =0;
-let marginLeft=600;
+let marginLeft=400;
 let marginRight=0;
 let marginToggle= true;
+
+$("#desc_btn").on('click',()=>{
+  $('#desc').css('display','inline-block');
+  
+})
+$(".fa-times").on('click',()=>{
+  $('#desc').css('display','none');
+})
 
 $("#start").on('click',function(){
   $(this).hide();
@@ -33,7 +41,7 @@ function resetGame(){
   passedTime=0;
   fontSize=0;
   angle =0;
-  marginLeft=600;
+  marginLeft=400;
   marginRight=0;
   marginToggle= true;
 }
@@ -99,7 +107,7 @@ function moveWord(){
 
   if(marginLeft<0){
     marginToggle=false;
-  }else if(marginLeft>600){
+  }else if(marginLeft>400){
     marginToggle=true;
   }
 
@@ -145,3 +153,5 @@ function clickAnswer(ver){
       $('.truth').removeClass('truth');
       nextWord();
 }
+
+

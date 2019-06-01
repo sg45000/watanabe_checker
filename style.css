@@ -105,3 +105,30 @@ body{
   border-bottom: solid 2px #fd9535;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
 }
+
+#desc{
+  display: none;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: auto;
+  font-size: 13pt;
+  line-height: 200%;
+  width: 50vw;
+  height: 70vh;
+  z-index: 2;
+  padding: 3em 4em;
+  background: #e2ceeb;
+  border-radius: 3px;
+  box-shadow:2px 2px  rgba(255,255,255,0.3);
+}
+.cancel{
+  display: inline-block;
+  font-size: 2em;
+  float: right;
+}
+.cancel:hover{
+  opacity: 0.3;
+}
