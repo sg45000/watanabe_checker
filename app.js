@@ -9,9 +9,10 @@ let gameSet;
 let wordDirect = [biggerWord,spinnerWord,moveWord];
 let fontSize=0;
 let angle =0;
-let marginLeft=400;
+let marginLeft=320;
 let marginRight=0;
 let marginToggle= true;
+let score=0;
 
 $("#desc_btn").on('click',()=>{
   $('#desc').css('display','inline-block');
@@ -36,14 +37,16 @@ function resetGame(){
   $('#correctCounter').text('0');
   $('#incorrectCounter').text('0');
   $('#timer_label').text('0.00');
+  $('#score').text('0点');
   correctCount=0;
   incorrectCount=0;
   passedTime=0;
   fontSize=0;
   angle =0;
-  marginLeft=400;
+  marginLeft=320;
   marginRight=0;
   marginToggle= true;
+  score=0;
 }
 
 
@@ -63,20 +66,48 @@ function updateTimer(){
   },10)
 }
 
+function scoreCalc(correct){
+  var point=0;
+  if(passedTime<3000){
+    point=500;
+  }else if(passedTime<10000){
+    point=300;
+  }else if(passedTime<20000){
+    point=200;
+  }else{
+    point=100;
+  }
+  if(correct){
+    score +=point;
+  }else{
+    score -=point;
+  }
+  if(score<0){
+    score=0;
+  }
+  $('#score').text(score+'点');
+}
+
+function result(){
+  let result;
+    if(score>2000){
+      result = "キングオブワタナベ";
+    }else if(score>1500){
+      result="ワタナベを知り尽くした男"
+    }else if(score>1000){
+      result="普通のワタナベ"
+    }else if(score>500){
+      result="ワタナベではない"
+    }else{
+      result="人間のクズ"
+    }
+    return result;
+}
+
 function nextWord(){
   if(correctCount==5){
     clearTimeout(timeoutId);
-    let result;
-    if(passedTime<7000){
-      result = "キングオブワタナベ";
-    }else if(passedTime<10000){
-      result="ワタナベを知り尽くした男"
-    }else if(passedTime<15000){
-      result="普通のワタナベ"
-    }else{
-      result="ワタナベではない"
-    }
-    alert('あなたは、 '+result);
+    alert(score+'点   あなたは、 '+result());
     resetGame();
     isPlaying=false;
     return;
@@ -107,7 +138,7 @@ function moveWord(){
 
   if(marginLeft<0){
     marginToggle=false;
-  }else if(marginLeft>400){
+  }else if(marginLeft>320){
     marginToggle=true;
   }
 
@@ -129,6 +160,7 @@ function gameJudge(){
     $(elm).on('click',function(){
       incorrectCount +=1;
       $('#incorrectCounter').text(incorrectCount);
+      scoreCalc(false);
       clickAnswer('B');
     })
   })
@@ -138,6 +170,7 @@ function gameJudge(){
   $('.truth').on('click',function(e){
     correctCount +=1;
     $('#correctCounter').text(correctCount);
+    scoreCalc(true);
     clickAnswer('A');
   });
 }
