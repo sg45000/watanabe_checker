@@ -1,0 +1,1 @@
+console.error("Error: Cannot find module 'babel-preset-es2015' from '/mnt/c/code/sg4500/w_checker' while parsing file: /mnt/c/code/sg4500/w_checker/app.js");

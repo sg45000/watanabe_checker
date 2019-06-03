@@ -1,0 +1,26 @@
+{
+  "name": "w_checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "./node_modules/.bin/babel src --out-dir dist/js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sg45000/watanabe_checker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sg45000/watanabe_checker/issues"
+  },
+  "homepage": "https://github.com/sg45000/watanabe_checker#readme"
+}
